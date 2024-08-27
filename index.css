@@ -1,0 +1,45 @@
+body {
+    background-color: rgb(62, 66, 76);
+    text-align: center;
+}
+h1 {
+    color:rgb(106, 188, 161);
+    font:900 5rem/1.5 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* text-shadow: 10px black; */
+}
+#dices{
+    width:550px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:30px;
+}
+#dices p {
+    color:aquamarine;
+    font-weight:700;
+    font-size: 2rem;
+    margin: 0;
+}
+.dice {
+    background-color: brown;
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    /* gap: 20px; */
+    padding: 30px;
+}
+.dice2, .dice1 {
+    width:70%;
+    height:70%;
+    background-color: burlywood;
+    border-radius: 50%;
+}
+.two, .seven {
+    grid-column-start:  3;
+}
+
+.hidden {
+    visibility: hidden;
+}
