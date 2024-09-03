@@ -7,6 +7,28 @@ h1 {
     font:900 5rem/1.5 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* text-shadow: 10px black; */
 }
+.btn {
+    background-color: burlywood;
+    border: 2px solid brown;
+    border-radius: 20px 20px;
+    padding: 10px;
+    color: brown;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+#label-for-rounds {
+    font: 600 2rem/1.5 Tahoma,Arial,Sans-serif;
+    color: rgb(107, 180, 156);
+    text-transform: capitalize;
+}
+#rounds {
+    background-color: wheat;
+    border:2px solid brown;
+    border-radius: 10px;
+    padding:5px;
+    margin: 5%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 #dices{
     width:550px;
     display: grid;
