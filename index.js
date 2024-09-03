@@ -30,11 +30,19 @@ let score2 = 0;
 let draws = 0;
 
 function throwDie(){
+    round++;
+    roundInput.value = round;
+    document.getElementById("label-for-rounds").textContent = "Round:";
     dice1Num = Math.floor(Math.random() * 6 + 1);console.log("dice1: " + dice1Num);
     dice2Num = Math.floor(Math.random() * 6 + 1);console.log("dice2: " + dice2Num);
     unhide([dice1One,dice1Two, dice1Three, dice1Four, dice1Five, dice1Six, dice1Seven]);
     unhide([dice2One, dice2Two, dice2Three, dice2Four, dice2Five, dice2Six, dice2Seven]);
     transform();
+    h1.textContent = judge() + "Press Next round";
+    console.log(`Draws: ${draws} ; Round: ${round}; Score1: ${score1}; Score2: ${score2}`)
+    btn.textContent = "next round";
+    setScores();
+    if(roundsLeft===0){btn.setAttribute("disabled", "")}
 }
 
 function judge(){
