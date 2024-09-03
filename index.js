@@ -39,10 +39,24 @@ function throwDie(){
 
 function judge(){
     if(dice1Num === dice2Num){
+        draws++;
+        if(draws===2){
+            roundsLeft++;
+            console.log(`roundsLeft: ${roundsLeft}`);
+            draws = 0;
+        }else{roundsLeft--;}
         return "It is a draw";
     }else if(dice1Num > dice2Num){
+        roundsLeft--;
+        console.log(`roundsLeft: ${roundsLeft}`);
+        score1 += dice1Num;
+        score2 += dice2Num;
         return "Player 1 Wins!";
     }else {
+        roundsLeft--;
+        console.log(`roundsLeft: ${roundsLeft}`);
+        score1 += dice1Num;
+        score2 += dice2Num;
         return "Player 2 Wins!";
     }
 }
