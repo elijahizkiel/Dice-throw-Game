@@ -9,8 +9,12 @@
         <link rel="stylesheet" href="./index.css" />
     </head>
     <body>
-        <h1 class="instructor"> Start To Play The Game</h1>
-        <button class="btn">Start</button>
+        <h1 class="instructor"> Click Start To Play The Game</h1>
+        <div id="round-counter">
+            <label id="label-for-rounds" for="rounds">rounds</label>
+            <input type="number" min="1" id="rounds" placeholder="Enter number of rounds"/>
+            <button class="btn">Start</button>
+        </div>
         <div id="dices">
             <p>Player 1</p>
             <p>Player 2</p>
@@ -32,6 +36,10 @@
                 <div class="dice2 six"></div>
                 <div class="dice2 seven"></div>
             </div>
+        </div>
+        <div id="score-field" class="score-board ">
+            <p>Player 1: </p><p class="scores" id="score1">0</p>
+            <p>Player 2: </p><p class="scores" id="score2">0</p>
         </div>
        <script src="./index.js"></script> 
     </body>
