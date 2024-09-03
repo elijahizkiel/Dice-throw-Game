@@ -103,6 +103,11 @@ function transform(){
     }
 }
 
+function setScores(){
+    player1Score.textContent = score1;
+    player2Score.textContent =score2;
+}
+
 btn.addEventListener("click", ()=>{
     console.log(roundInput.value + typeof(roundInput.value));
     if(round === 0)roundsLeft = eval(roundInput.value);
