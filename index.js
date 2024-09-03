@@ -1,5 +1,9 @@
 const h1 = document.querySelector(".instructor");
 const btn = document.querySelector(".btn");
+const roundInput = document.getElementById("rounds");
+const player1Score = document.getElementById("score1");
+const player2Score =document.getElementById("score2");
+const scoreField = document.getElementById("score-field");
 
 const dice1One = document.querySelector(".dice1.one");
 const dice1Two = document.querySelector(".dice1.two");
@@ -20,13 +24,17 @@ const dice2Seven = document.querySelector(".dice2.seven");
 var dice1Num;
 var dice2Num;
 
+let round = 0;
+let score1 = 0;
+let score2 = 0;
+let draws = 0;
+
 function throwDie(){
     dice1Num = Math.floor(Math.random() * 6 + 1);console.log("dice1: " + dice1Num);
     dice2Num = Math.floor(Math.random() * 6 + 1);console.log("dice2: " + dice2Num);
     unhide([dice1One,dice1Two, dice1Three, dice1Four, dice1Five, dice1Six, dice1Seven]);
     unhide([dice2One, dice2Two, dice2Three, dice2Four, dice2Five, dice2Six, dice2Seven]);
     transform();
-    h1.textContent = judge();
 }
 
 function judge(){
@@ -40,7 +48,6 @@ function judge(){
 }
 
 function hide(items){
-    console.log("hiding");
     for (item of items){
         item.classList.add("hidden");
     }
@@ -53,7 +60,6 @@ function unhide(items) {
 }
 
 function transform(){
-    console.log("Entered to");
     if(dice1Num ===1){
         hide([dice1One,dice1Two, dice1Three, dice1Five, dice1Six, dice1Seven]);
     }else if(dice1Num === 2){
@@ -83,4 +89,13 @@ function transform(){
     }
 }
 
-btn.addEventListener("click", () =>{throwDie()})
+btn.addEventListener("click", ()=>{
+    console.log(roundInput.value + typeof(roundInput.value));
+    if(round === 0)roundsLeft = eval(roundInput.value);
+    if(roundsLeft > 0){
+        roundInput.setAttribute("disabled", "");
+        throwDie();
+    }else{
+        h1.textContent= "Enter number of Rounds";
+    }
+});
